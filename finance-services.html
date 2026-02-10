@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional financial planning, tax compliance, audit services, and regulatory advisory solutions for businesses.">
+    <title>Financial & Compliance Services | Sura Corporate Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="js/finance-calculator.js" defer></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> finance@suracorporate.com</span>
+                    <span><i class="fas fa-phone"></i> +91-XXXXXXXXXX</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">SCS</div>
+                    <div class="logo-text">
+                        <span class="logo-main">Sura Corporate</span>
+                        <span class="logo-sub">Solutions</span>
+                    </div>
+                </a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-menu">
+                                <a href="hr-services.html">HR Consultancy & Manpower</a>
+                                <a href="finance-services.html" class="active">Financial & Compliance Services</a>
+                                <a href="tech-services.html">Tech & Digital Growth</a>
+                                <a href="training-services.html">Corporate Training</a>
+                            </div>
+                        </li>
+                        <li><a href="industries.html">Industries Served</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <div class="nav-cta">
+                        <a href="contact.html?service=finance" class="btn btn-primary">Get Finance Consultation</a>
+                    </div>
+                </div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Finance Services Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Financial & Compliance Services</h1>
+            <p>Comprehensive financial planning, tax compliance, audit, and regulatory advisory solutions for businesses</p>
+        </div>
+    </section>
+    <!-- Tax Savings Calculator -->
+<section class="calculator-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Tax Savings Calculator</h2>
+            <p>Estimate how much you can save with our tax optimization strategies</p>
+        </div>
+        
+        <div class="calculator">
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="annual-income">Annual Business Income (₹)</label>
+                    <input type="number" id="annual-income" min="0" value="10000000" step="100000">
+                </div>
+                <div class="form-group">
+                    <label for="business-type">Business Type</label>
+                    <select id="business-type">
+                        <option value="proprietorship">Proprietorship</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="private-limited">Private Limited</option>
+                        <option value="llp">LLP</option>
+                    </select>
+                </div>
+                <button id="calculate-tax" class="btn btn-primary">
+                    <i class="fas fa-calculator"></i> Calculate Tax Savings
+                </button>
+                
+                <div class="calculator-tips" style="margin-top: 20px; padding: 15px; background: var(--light-color); border-radius: 8px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px; font-size: 1rem;">
+                        <i class="fas fa-lightbulb"></i> Tax Saving Tips:
+                    </h4>
+                    <ul style="color: var(--gray-medium); font-size: 0.9rem; padding-left: 20px; margin: 0;">
+                        <li>Utilize all available deductions under Section 80C</li>
+                        <li>Consider business restructuring for optimal tax benefits</li>
+                        <li>Plan investments before financial year end</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="calculator-result">
+                <h3>Estimated Savings</h3>
+                <div class="result-box">
+                    <div class="result-item">
+                        <span class="result-label">Current Tax Liability</span>
+                        <span class="result-value" id="current-tax">₹ 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Optimized Tax Liability</span>
+                        <span class="result-value" id="optimized-tax">₹ 0</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="result-label">Potential Savings</span>
+                        <span class="result-value" id="savings">₹ 0</span>
+                    </div>
+                </div>
+                
+                <div class="result-explanation" style="margin-top: 20px; padding: 15px; background: var(--light-color); border-radius: 8px;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 10px; font-size: 1rem;">How We Achieve These Savings:</h4>
+                    <p style="color: var(--gray-medium); font-size: 0.9rem; margin: 0;">
+                        Our tax optimization strategies include legal deductions, business restructuring, 
+                        investment planning, and compliance optimization to minimize your tax liability.
+                    </p>
+                </div>
+                
+                <div class="result-cta" style="margin-top: 25px; text-align: center;">
+                    <a href="contact.html?service=tax-optimization" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-handshake"></i> Get Personalized Tax Plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Finance Services Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-details">
+                <div class="service-main">
+                    <div class="service-intro">
+                        <h2>Expert Financial Solutions for Business Growth</h2>
+                        <p>We provide end-to-end financial services that ensure compliance, optimize taxation, and drive financial performance. Our team of CA experts and financial advisors helps businesses navigate complex regulatory environments while maximizing profitability.</p>
+                    </div>
+                    
+                    <div class="service-offerings">
+                        <h3>Our Financial Services</h3>
+                        <div class="offerings-grid">
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h4>Financial Planning & Analysis</h4>
+                                <p>Strategic financial planning, budgeting, forecasting, and financial analysis for informed decision-making.</p>
+                                <ul class="offering-features">
+                                    <li>Budget Preparation</li>
+                                    <li>Financial Forecasting</li>
+                                    <li>Cash Flow Management</li>
+                                    <li>Investment Analysis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-balance-scale"></i>
+                                </div>
+                                <h4>Tax Advisory & Compliance</h4>
+                                <p>Complete tax planning, compliance, filing, and advisory services for direct and indirect taxes.</p>
+                                <ul class="offering-features">
+                                    <li>GST Compliance</li>
+                                    <li>Income Tax Planning</li>
+                                    <li>International Taxation</li>
+                                    <li>Tax Audit Support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-search-dollar"></i>
+                                </div>
+                                <h4>Audit & Assurance Services</h4>
+                                <p>Internal, statutory, and tax audits with comprehensive reporting and compliance assurance.</p>
+                                <ul class="offering-features">
+                                    <li>Statutory Audit</li>
+                                    <li>Internal Audit</li>
+                                    <li>Tax Audit</li>
+                                    <li>Due Diligence</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-gavel"></i>
+                                </div>
+                                <h4>Regulatory Compliance</h4>
+                                <p>Ensure adherence to SEBI, RBI, FEMA, Companies Act, and other regulatory requirements.</p>
+                                <ul class="offering-features">
+                                    <li>Company Law Compliance</li>
+                                    <li>SEBI Regulations</li>
+                                    <li>FEMA Compliance</li>
+                                    <li>Secretarial Services</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Business Advisory</h4>
+                                <p>Strategic business advisory services including mergers, acquisitions, and restructuring.</p>
+                                <ul class="offering-features">
+                                    <li>M&A Advisory</li>
+                                    <li>Business Restructuring</li>
+                                    <li>Valuation Services</li>
+                                    <li>Fund Raising Support</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="offering-item">
+                                <div class="offering-icon">
+                                    <i class="fas fa-file-invoice"></i>
+                                </div>
+                                <h4>Accounting & Bookkeeping</h4>
+                                <p>Complete accounting services, bookkeeping, financial reporting, and MIS preparation.</p>
+                                <ul class="offering-features">
+                                    <li>Bookkeeping Services</li>
+                                    <li>Financial Statements</li>
+                                    <li>MIS Reporting</li>
+                                    <li>Account Finalization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="compliance-timeline">
+                        <h3>Annual Compliance Calendar</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">April</div>
+                                <div class="timeline-content">
+                                    <h4>Financial Year Closing</h4>
+                                    <p>Annual accounts finalization and audit commencement</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">June</div>
+                                <div class="timeline-content">
+                                    <h4>Tax Planning</h4>
+                                    <p>Quarterly GST returns and advance tax planning</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">September</div>
+                                <div class="timeline-content">
+                                    <h4>Half-Yearly Compliance</h4>
+                                    <p>Financial review and compliance status assessment</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">December</div>
+                                <div class="timeline-content">
+                                    <h4>Year-End Planning</h4>
+                                    <p>Tax optimization and next year budget preparation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Financial Health Check</h3>
+                        <div class="contact-widget">
+                            <p>Get a free financial health assessment for your business</p>
+                            <a href="contact.html?service=finance-audit" class="btn btn-primary">
+                                <i class="fas fa-stethoscope"></i> Free Financial Checkup
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Key Statistics</h3>
+                        <div class="stats-widget">
+                            <div class="stat-item">
+                                <div class="stat-number">₹2.5Cr+</div>
+                                <div class="stat-label">Tax Saved for Clients</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Compliance Rate</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">CA Experts</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Download Resources</h3>
+                        <div class="download-widget">
+                            <ul class="resource-list">
+                                <li><a href="#"><i class="fas fa-file-pdf"></i> GST Compliance Guide</a></li>
+                                <li><a href="#"><i class="fas fa-file-excel"></i> Tax Planning Template</a></li>
+                                <li><a href="#"><i class="fas fa-file-word"></i> Compliance Checklist</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Savings Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tax Savings Calculator</h2>
+                <p>Estimate how much you can save with our tax optimization strategies</p>
+            </div>
+            
+            <div class="calculator">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="annual-income">Annual Business Income (₹)</label>
+                        <input type="number" id="annual-income" min="0" value="10000000">
+                    </div>
+                    <div class="form-group">
+                        <label for="business-type">Business Type</label>
+                        <select id="business-type">
+                            <option value="proprietorship">Proprietorship</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="private-limited">Private Limited</option>
+                            <option value="llp">LLP</option>
+                        </select>
+                    </div>
+                    <button id="calculate-tax" class="btn btn-primary">Calculate Tax Savings</button>
+                </div>
+                <div class="calculator-result">
+                    <h3>Estimated Savings</h3>
+                    <div class="result-box">
+                        <div class="result-item">
+                            <span class="result-label">Current Tax Liability</span>
+                            <span class="result-value" id="current-tax">₹ 3,00,000</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Optimized Tax Liability</span>
+                            <span class="result-value" id="optimized-tax">₹ 2,10,000</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Potential Savings</span>
+                            <span class="result-value" id="savings">₹ 90,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Secure Your Financial Future</h2>
+                <p>Partner with us for comprehensive financial solutions that drive growth and ensure compliance.</p>
+                <a href="contact.html?service=finance" class="btn btn-primary btn-large">Schedule Financial Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">SCS</div>
+                        <div class="logo-text">
+                            <span class="logo-main">Sura Corporate</span>
+                            <span class="logo-sub">Solutions</span>
+                        </div>
+                    </div>
+                    <p class="footer-about">Premier B2B consulting firm providing comprehensive corporate solutions across HR, Finance, Technology, and Training sectors.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries Served</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Finance Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="finance-services.html#tax">Tax Advisory</a></li>
+                        <li><a href="finance-services.html#audit">Audit Services</a></li>
+                        <li><a href="finance-services.html#compliance">Regulatory Compliance</a></li>
+                        <li><a href="finance-services.html#advisory">Business Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Corporate Office, Mumbai, India</li>
+                        <li><i class="fas fa-phone"></i> +91-XXXXXXXXXX</li>
+                        <li><i class="fas fa-envelope"></i> finance@suracorporate.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Sura Corporate Solutions. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="disclaimer.html">Disclaimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi,%20I%20need%20financial%20consultancy%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/finance-calculator.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>
